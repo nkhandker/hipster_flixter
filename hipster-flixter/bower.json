@@ -1,0 +1,20 @@
+{
+  "name": "hipster-flixter",
+  "authors": [
+    "Nahiyan Khandker <nahiyan.khandker@gmail.com>"
+  ],
+  "description": "CF recommender for cool kids",
+  "main": "hf.py",
+  "keywords": [
+    "movies"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

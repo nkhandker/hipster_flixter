@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css/custom css-->
+    <link type="text/css" rel="stylesheet" href="static/bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="static/custom/hf.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Hipster Flixter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo" style="padding-left:5px;"><i class="material-icons">ondemand_video</i>Hipster Flixter</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">About</a></li>
+          <li><a href="badges.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container" id="gal-cont">
+      <div class="row" id="gallery">
+
+      </div> 
+      <a class="waves-effect waves-light btn" onclick="get_more_movies()"><i class="material-icons right">local_movies</i>Get More Movies</a>
+      <a class="waves-effect waves-light btn" onclick="send_selected_movies()"><i class="material-icons right">chevron_right</i>Submit</a>
+    </div>
+
+    <div class="container" id="rec-cont">
+      <div class="row" id="recommended-gallery">
+
+      </div> 
+      <a class="waves-effect waves-light btn" onclick="get_random_movies()"><i class="material-icons right" >local_movies</i>Recommend Me More!</a>
+    </div>
+    <!-- scripts -->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
+    <!--Import custom js-->
+    <script src="{{ url_for('static', filename='custom/hf.js') }}"></script>
+  </body>
+</html>
