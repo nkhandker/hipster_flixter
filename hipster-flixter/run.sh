@@ -1,3 +1,3 @@
 #!/bin/bash
 
-Python3 hf.py
+python3 hf.py

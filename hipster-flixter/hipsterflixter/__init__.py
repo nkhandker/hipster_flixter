@@ -1,7 +1,7 @@
 
 import logging 
  
-from flask import current_app, Flask, redirect, url_for, jsonify, request, render_template
+from flask import current_app, Flask, redirect, url_for, jsonify, request, render_template, send_file
 import json
 from hipsterflixter import alternate_alg
 #from alternate_alg import get_12_random, get_hipster_movies
@@ -20,12 +20,6 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
     if not app.testing:
         logging.basicConfig(level=logging.INFO)
 
-    # Setup the data model.
-    with app.app_context():
-        model = get_model()
-        model.init_app(app)
-
-
     # Add a default root route.
     @app.route("/", methods=['GET'])
     def test():
@@ -34,6 +28,14 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
     @app.route("/hello")
     def hello():
         return render_template('hello.html')
+
+    @app.route("/poster-not-available.png")
+    def poster_pic():
+        return send_file('images/poster-not-available.png', mimetype='image/png')
+
+    @app.route("/Hipster_Poster")
+    def poster_pic_2():
+        return send_file('images/hipster_poster.png', mimetype='image/png')
 
     @app.route("/random", methods=['GET'])
     def random():
