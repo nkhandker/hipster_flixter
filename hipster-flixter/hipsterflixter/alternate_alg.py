@@ -39,7 +39,7 @@ def get_movie_json_dict(id_list):
         for line in outfile:
             movie = json.loads(line)
             
-            if int(movie['id']) == int(movie_id):
+            if movie['id'] == movie_id:
                 id_json[int(movie['id'])] = movie
                 break
 
@@ -175,7 +175,7 @@ def get_hipster_movies(id_list):
         else:
             rating = float(rating)
             
-            rating /= 2
+            rating /= 1.25
         
         id_rating[id_val] = rating * random.uniform(1.0, 1.075)
 
@@ -189,7 +189,7 @@ def get_hipster_movies(id_list):
         language_multiplier = 1
             
         if id_json[id_val]["Language"] == "English":
-            language_multiplier = 1.25
+            language_multiplier = 2
           
         score = genre_score * length_score * debut_score * rating * language_multiplier
         

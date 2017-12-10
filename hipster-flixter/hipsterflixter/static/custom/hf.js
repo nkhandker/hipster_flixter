@@ -4,6 +4,9 @@ var recieved_movies = [];
 // this will handle the selection of movies in the gallery and the list
 // this is where you want to chagne colors etc for movie cards 
 function toggle_selected(id){
+    var id_styled = "#button" + id
+    $(id_styled).removeClass("waves-effect waves-light red").addClass('disabled');
+
     if($.inArray(id, selected_movies) == -1){
         selected_movies.push(id);
     }
@@ -15,7 +18,7 @@ function create_card(title, poster, id){
             "<div class='card-image'>" +
             "<img src='" + poster + "' style='width:100px;height:140px;'>" +       
             "</div>" + 
-            "<button id = 'button" + id + "'' class='btn-floating halfway-fab waves-effect waves-light red' onclick='toggle_selected("+ id +")'><i class='material-icons'>add</i></button>" +
+            "<button id = 'button" + id + "'' class='btn-floating halfway-fab waves-effect waves-light red' onclick='toggle_selected(\""+ id +"\")'><i class='material-icons'>add</i></button>" +
             "<div class='card-stacked'>" +
             "<div class='card-content'>" +
             "<span class='card-title'>"+ title +"</span>" +
